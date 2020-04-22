@@ -4,6 +4,7 @@ import theme from '@rebass/preset'
 import { 
     Heading,
     Flex,
+    Text,
     Image,
     Box
 } from 'rebass/styled-components'
@@ -39,7 +40,7 @@ function App() {
               }}
           >
               <Box 
-                  px={4} 
+                  px={0} 
                   flex={1}
                   sx={{
                       minWidth: '300px'
@@ -48,12 +49,13 @@ function App() {
                   <Flex
                       bg='primary'
                       sx={{
-                        justifyContent: 'space-around',
+                          justifyContent: 'space-around',
+                          flexWrap: 'wrap',
                       }}
                   >
                       <Box 
                           sx={{
-                              minWidth: '50%',
+                              width: '50%',
                           }}
                       >
                           <Heading 
@@ -75,7 +77,7 @@ function App() {
                           sx={{
                               borderLeftStyle: 'solid',
                               borderColor: 'secondary',
-                              minWidth: '50%',
+                              width: '50%',
                           }}
                       >
                           <Heading 
@@ -88,6 +90,62 @@ function App() {
                               Matheus<br />  
                               Freitas
                       </Heading>
+                      </Box>
+
+                      <Box 
+                          mt={4}
+                          sx={{
+                              minWidth: '100%',
+                          }}
+                      >
+                          <Flex
+                              bg='secondary'
+                              sx={{
+                                  justifyContent: 'center',
+                                  flexGrow: 0,
+                              }}
+                          >
+                              <Box 
+                                  my={0}
+                                  mx={[ 4, 2, 3, 4 ]}
+                              >
+                                  <Text 
+                                      fontSize={[ 5, 5, 5, 6 ]}
+                                      as='p'><i className="fab fa-whatsapp"></i></Text>
+                              </Box>
+                              <Box 
+                                  my={0}
+                                  mx={[ 4, 2, 3, 4 ]}
+                              >
+                                  <Text 
+                                      fontSize={[ 5, 5, 5, 6 ]}
+                                      as='p'><i className="fab fa-linkedin"></i></Text>
+                              </Box>
+                              <Box 
+                                  my={0}
+                                  mx={[ 4, 2, 3, 4 ]}
+                              >
+                                  <Text 
+                                      fontSize={[ 5, 5, 5, 6 ]}
+                                      as='p'><i className="fab fa-gitlab"></i></Text>
+                              </Box>
+                              <Box 
+                                  my={0}
+                                  mx={[ 4, 2, 3, 4 ]}
+                              >
+                                  <Text 
+                                      fontSize={[ 5, 5, 5, 6 ]}
+                                      as='p'><i className="fab fa-github"></i></Text>
+                              </Box>
+                              <Box 
+                                  my={0}
+                                  mx={[ 4, 2, 3, 4 ]}
+                              >
+                                  <Text 
+                                      fontSize={[ 5, 5, 5, 6 ]}
+                                      as='p'><i className="fas fa-envelope"></i></Text>
+                              </Box>
+                          </Flex>
                       </Box>
                   </Flex>
               </Box>
@@ -103,7 +161,7 @@ function App() {
                           sx={{ 
                               objectFit: 'cover',
                               height: '100%',
-                              '@media screen and (max-width: 600px)': {
+                              '@media screen and (max-width: 60px)': {
                                   maxHeight: '50vh',
                                   width: '100%',
                               }
