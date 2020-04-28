@@ -1,0 +1,19 @@
+image: node:latest
+
+before_script:
+  - yarn
+
+cache:
+  paths:
+    - node_modules/
+
+pages:
+  script:
+    - yarn build
+    - mv public/ public-backup/
+    - mv build/ public/
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
