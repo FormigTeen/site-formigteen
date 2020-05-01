@@ -10,8 +10,9 @@ cache:
 pages:
   script:
     - yarn build
-    - mv public/ public-backup/
-    - mv build/ public/
+    - mv public public_src
+    - mv build public
+    - cp public/index.html public/404.html
   artifacts:
     paths:
       - public
