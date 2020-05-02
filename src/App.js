@@ -20,7 +20,6 @@ const myTheme = {
 }
 
 function App() {
-  console.log(myTheme)
   return (
       <ThemeProvider theme={myTheme}>
           <Profile />
