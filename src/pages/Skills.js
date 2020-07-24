@@ -51,16 +51,7 @@ const Skills = () => (
                     VueJs
                 </Skill>
                 <Skill value={100}>
-                    Vim
-                </Skill>
-                <Skill value={100}>
-                    Shell<br />Script
-                </Skill>
-                <Skill value={100}>
-                    php
-                </Skill>
-                <Skill value={100}>
-                    JavaScript
+                    Docker
                 </Skill>
             </Flex>
         </Box>
