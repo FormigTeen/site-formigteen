@@ -3,6 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import theme from '@rebass/preset'
 import Profile from './pages/Profile'
 import Quote from './pages/Quote'
+import Bot from './pages/Bot'
 import Skills from './pages/Skills'
 
 const myTheme = {
@@ -24,6 +25,7 @@ function App() {
       <ThemeProvider theme={myTheme}>
           <Profile />
           <Quote />
+          <Bot />
           <Skills />
       </ThemeProvider>
   );
