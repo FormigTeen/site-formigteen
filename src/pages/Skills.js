@@ -38,11 +38,29 @@ const Skills = () => (
                     flexWrap: 'wrap'
                 }}
             >
-                <Skill value={95}>
+                <Skill value={100}>
                     Laravel
                 </Skill>
-                <Skill value={75}>
+                <Skill value={100}>
                     React
+                </Skill>
+                <Skill value={100}>
+                    AdonisJs
+                </Skill>
+                <Skill value={100}>
+                    VueJs
+                </Skill>
+                <Skill value={100}>
+                    Vim
+                </Skill>
+                <Skill value={100}>
+                    Shell<br />Script
+                </Skill>
+                <Skill value={100}>
+                    php
+                </Skill>
+                <Skill value={100}>
+                    JavaScript
                 </Skill>
             </Flex>
         </Box>
