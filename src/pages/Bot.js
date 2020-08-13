@@ -4,6 +4,7 @@ import {
     Flex,
     Box
 } from 'rebass/styled-components'
+import Typing from 'react-typing-animation';
 import { Input } from '@rebass/forms'
 
 
@@ -21,23 +22,26 @@ const Bot = () => (
         <Box 
             mb={[3, 3, 3, 4]}
             flex={0}>
-            <Heading 
-                as='h2' 
-                mb={[4, 4, 4, 5]}
-                fontSize={[4, 4, 4, 4]}
-                sx={{
-                    textAlign: 'center',
-                }}
-                color='secondary'>
-                TALK WITH ME :)
-            </Heading>
+            <Typing cursorClassName="cursor-white">
+                <Heading 
+                    as='h2' 
+                    mb={[4, 4, 4, 5]}
+                    fontSize={[4, 4, 4, 4]}
+                    sx={{
+                        textAlign: 'center',
+                    }}
+                    color='secondary'>
+                    Hi!
+                </Heading>
+            </Typing>
         </Box>
         <Box 
             px={5}
             sx={{
                 width: '100%',
             }}
-            flex={1}>
+            flex={1}
+        >
             <Input
                 name='message'
                 type='text'
@@ -45,7 +49,10 @@ const Bot = () => (
                 sx={{
                     color: '#E7E4EF',     
                     textAlign: 'center',
+                    border: '0px',
                     ':focus': {
+                        outline: 'none',
+                        borderBottom: '1px solid',
                         color: '#E7E4EF',     
                     }
                 }}

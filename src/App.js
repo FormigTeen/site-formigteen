@@ -5,6 +5,7 @@ import Profile from './pages/Profile'
 import Quote from './pages/Quote'
 import Bot from './pages/Bot'
 import Skills from './pages/Skills'
+import './index.css';
 
 const myTheme = {
     ...theme,
