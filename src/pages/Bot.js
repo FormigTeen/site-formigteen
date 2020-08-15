@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
     Heading,
     Flex,
@@ -7,21 +7,55 @@ import {
 import Typist from 'react-typist';
 import { Input } from '@rebass/forms'
 import "react-typist/dist/Typist.css"
+import useAxios from 'axios-hooks'
+
 
 
 const Bot = () => {
     const [message, setMessage] = useState("Hi!")
     const [text, setText] = useState("")
+
+    const [{ loading: botIsLoading, response: botResponse }, botCall ] = useAxios({
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json',
+        },
+        crossdomain: true,
+        url: 'https://formigteen-bot.herokuapp.com/bot',
+        method: 'POST'
+    },
+        { manual: true }
+    )
+
     const handleChange = (event) => {
         const { target: { value } } = event;
         setText(value);
     }
+
     const handleKeyUp = ({ keyCode }) => {
         if ( keyCode === 13 ) {
-            setMessage(text || "*u*")
+            botCall({ 
+                data: {
+                    message: text,
+                    driver: 'api',
+                }
+            })
             setText("")
         }
     }
+
+    useEffect(() => {
+        if ( !botIsLoading && botResponse ) {
+            setMessage(botResponse.data.messages[0].text)
+        }
+    }, [botResponse, botIsLoading, setMessage])
+
+    useEffect(() => {
+        if ( botIsLoading ) {
+            setMessage("...")
+        }
+    }, [botIsLoading])
+
     return (
         <Flex
             bg='primary'
