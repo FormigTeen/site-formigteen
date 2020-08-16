@@ -20,7 +20,6 @@ const Bot = () => {
             'Content-Type': 'application/json',
             'Accept': 'application/json',
         },
-        crossdomain: true,
         url: 'https://formigteen-bot.herokuapp.com/bot',
         method: 'POST'
     },
