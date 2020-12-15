@@ -39,19 +39,37 @@ const Skills = () => (
                 }}
             >
                 <Skill value={100}>
+                    php
+                </Skill>
+                <Skill value={100}>
+                    MySQL
+                </Skill>
+                <Skill value={100}>
+                    JavaScript
+                </Skill>
+                <Skill value={100}>
+                    Docker
+                </Skill>
+                <Skill value={100}>
+                    TypeScript
+                </Skill>
+                <Skill value={100}>
                     Laravel
+                </Skill>
+                <Skill value={100}>
+                    Lumen
+                </Skill>
+                <Skill value={100}>
+                    Jigsaw
                 </Skill>
                 <Skill value={100}>
                     React
                 </Skill>
                 <Skill value={100}>
-                    AdonisJs
-                </Skill>
-                <Skill value={100}>
                     VueJs
                 </Skill>
                 <Skill value={100}>
-                    Docker
+                    AdonisJs
                 </Skill>
             </Flex>
         </Box>

@@ -12,7 +12,7 @@ import useAxios from 'axios-hooks'
 
 
 const Bot = () => {
-    const [message, setMessage] = useState("Hi!")
+    const [message, setMessage] = useState("Olá! Que tal falar comigo? :)")
     const [text, setText] = useState("")
 
     const [{ loading: botIsLoading, response: botResponse }, botCall ] = useAxios({
@@ -106,7 +106,7 @@ const Bot = () => {
                             color: '#E7E4EF',     
                         }
                     }}
-                    placeholder='Type something'
+                    placeholder='Digite aqui...'
                 />
             </Box>
         </Flex>
