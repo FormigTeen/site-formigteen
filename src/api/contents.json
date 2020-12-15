@@ -1,0 +1,55 @@
+{
+    "quotes": [
+        {
+            "text": "Olá, eu sou desenvolvedor Full-Stack, porém focado mais em Back-End.",
+            "author": "Matheus Silva Freitas",
+            "job": ""
+        }
+    ],
+    "skills": [
+        {
+            "value": 100,
+            "text": "php"
+        },
+        {
+            "value": 100,
+            "text": "MySQL"
+        },
+        {
+            "value": 100,
+            "text": "JavaScript"
+        },
+        {
+            "value": 100,
+            "text": "Docker"
+        },
+        {
+            "value": 100,
+            "text": "TypeScript"
+        },
+        {
+            "value": 100,
+            "text": "Laravel"
+        },
+        {
+            "value": 100,
+            "text": "Lumen"
+        },
+        {
+            "value": 100,
+            "text": "Jigsaw"
+        },
+        {
+            "value": 100,
+            "text": "React"
+        },
+        {
+            "value": 100,
+            "text": "VueJs"
+        },
+        {
+            "value": 100,
+            "text": "AdonisJs"
+        }
+    ]
+}
