@@ -83,7 +83,7 @@ const ImageBox = ({ source }) => (
     <Box
         flex={1}
         sx={{
-            minWidth: '515px',
+            minWidth: '25%',
         }}
     >
         <Image
@@ -106,7 +106,7 @@ const InfoBox = ({ children }) => (
         px={0}
         flex={3}
         sx={{
-            minWidth: '300px'
+            minWidth: '450px'
         }}
     >
         <Flex
