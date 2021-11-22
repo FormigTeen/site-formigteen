@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { 
+import React, {useState, useEffect, useContext} from 'react';
+import {
     Heading,
     Flex,
     Box
@@ -8,12 +8,21 @@ import Typist from 'react-typist';
 import { Input } from '@rebass/forms'
 import "react-typist/dist/Typist.css"
 import useAxios from 'axios-hooks'
+import {useTranslation} from "react-i18next";
+import LanguageContext from "../contexts/LanguageContext";
 
 
 
 const Bot = () => {
-    const [message, setMessage] = useState("Olá! Que tal falar comigo? :)")
+    const { t } = useTranslation()
+    const [message, setMessage] = useState(t("FALE_COMIGO"))
+    const { language } = useContext(LanguageContext)
     const [text, setText] = useState("")
+
+    useEffect(() => {
+        const changeText = setTimeout(() => setMessage(t("FALE_COMIGO")))
+        return () => clearTimeout(changeText)
+    }, [language])
 
     const [{ loading: botIsLoading, response: botResponse }, botCall ] = useAxios({
         headers: {
@@ -33,7 +42,7 @@ const Bot = () => {
 
     const handleKeyUp = ({ keyCode }) => {
         if ( keyCode === 13 ) {
-            botCall({ 
+            botCall({
                 data: {
                     message: text,
                     driver: 'api',
@@ -66,11 +75,11 @@ const Bot = () => {
                 alignItems: 'center',
             }}
         >
-            <Box 
+            <Box
                 mb={[3, 3, 3, 4]}
                 flex={0}>
-                <Heading 
-                    as='h2' 
+                <Heading
+                    as='h2'
                     mb={[4, 4, 4, 5]}
                     fontSize={[4, 4, 4, 4]}
                     sx={{
@@ -82,7 +91,7 @@ const Bot = () => {
                     </Typist>
                 </Heading>
             </Box>
-            <Box 
+            <Box
                 px={5}
                 sx={{
                     width: '100%',
@@ -94,16 +103,16 @@ const Bot = () => {
                     type='text'
                     fontSize={[4, 4, 4, 4]}
                     value ={text}
-                    onChange={handleChange} 
+                    onChange={handleChange}
                     onKeyUp={handleKeyUp}
                     sx={{
-                        color: '#E7E4EF',     
+                        color: '#E7E4EF',
                         textAlign: 'center',
                         border: '0px',
                         ':focus': {
                             outline: 'none',
                             borderBottom: '1px solid',
-                            color: '#E7E4EF',     
+                            color: '#E7E4EF',
                         }
                     }}
                     placeholder='Digite aqui...'

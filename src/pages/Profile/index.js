@@ -1,5 +1,5 @@
 import React from 'react';
-import { 
+import {
     Heading,
     Flex,
     Link,
@@ -8,11 +8,12 @@ import {
     Box
 } from 'rebass/styled-components'
 import ProfileImage from './images/profile.jpg'
+import {useTranslation} from "react-i18next";
 
 const SubHeader = ({ children }) => (
     <Box sx={{ width: '50%' }}>
-        <Heading 
-            as='h2' 
+        <Heading
+            as='h2'
             fontSize={[2, 2, 2, 4]}
             sx={{
                 textAlign: 'right',
@@ -24,7 +25,7 @@ const SubHeader = ({ children }) => (
 )
 
 const Header = ({ children }) => (
-    <Box 
+    <Box
         flex={1}
         pl={2}
         ml={2}
@@ -34,8 +35,8 @@ const Header = ({ children }) => (
             width: '50%',
         }}
     >
-        <Heading 
-            as='h1' 
+        <Heading
+            as='h1'
             fontSize={[5, 5, 5, 7]}
             sx={{
                 textAlign: 'left',
@@ -47,7 +48,7 @@ const Header = ({ children }) => (
 )
 
 const IconsList = ({ children }) => (
-    <Box 
+    <Box
         mt={4}
         sx={{
             minWidth: '100%',
@@ -66,12 +67,12 @@ const IconsList = ({ children }) => (
 )
 
 const IconItem = ({ className, href }) => (
-    <Box 
+    <Box
         my={0}
         mx={[ 4, 2, 3, 4 ]}
     >
         <Link target="_blank" href={href}>
-        <Text 
+        <Text
             fontSize={[ 5, 5, 5, 6 ]}
             as='p'><i className={className}></i></Text>
         </Link>
@@ -79,14 +80,14 @@ const IconItem = ({ className, href }) => (
 )
 
 const ImageBox = ({ source }) => (
-    <Box 
+    <Box
         flex={1}
         sx={{
             minWidth: '515px',
         }}
     >
         <Image
-            sx={{ 
+            sx={{
                 objectFit: 'cover',
                 height: '100%',
                 '@media screen and (max-width: 60px)': {
@@ -101,8 +102,8 @@ const ImageBox = ({ source }) => (
 )
 
 const InfoBox = ({ children }) => (
-    <Box 
-        px={0} 
+    <Box
+        px={0}
         flex={3}
         sx={{
             minWidth: '300px'
@@ -137,42 +138,45 @@ const Container = ({ children }) => (
     </Flex>
 )
 
-const Profile = () => (
-    <Container>
-        <InfoBox>
-            <SubHeader>
-                Web<br />
-                Developer
-            </SubHeader>
-            <Header>
-                Matheus<br />  
-                Freitas
-            </Header>
+const Profile = () => {
+    const { t } = useTranslation()
+    return (
+        <Container>
+            <InfoBox>
+                <SubHeader>
+                    {t("DESENVOLVEDOR_WEB_PARTE_UM")}<br/>
+                    {t("DESENVOLVEDOR_WEB_PARTE_DOIS")}
+                </SubHeader>
+                <Header>
+                    Matheus<br />
+                    Freitas
+                </Header>
 
-            <IconsList>
-                <IconItem 
-                    className="fab fa-whatsapp" 
-                    href="https://api.whatsapp.com/send?phone=5571999860936&text=Matheus%20(%20FormigTeen%20)%2C%20tudo%20bem%3F" />
-                <IconItem 
-                    className="fab fa-linkedin" 
-                    href="https://www.linkedin.com/in/matheus-silva-freitas-83134176/"
-                />
-                <IconItem 
-                    className="fab fa-gitlab" 
-                    href="https://gitlab.com/FormigTeen"
-                />
-                <IconItem 
-                    className="fab fa-github" 
-                    href="https://github.com/FormigTeen"
-                />
-                <IconItem 
-                    className="fas fa-envelope" 
-                    href="mailto:contato@formigteen.dev"
-                />
-            </IconsList>
-        </InfoBox>
-        <ImageBox source={ProfileImage} />
-    </Container>
-)
+                <IconsList>
+                    <IconItem
+                        className="fab fa-whatsapp"
+                        href="https://api.whatsapp.com/send?phone=5571999860936&text=Matheus%20(%20FormigTeen%20)%2C%20tudo%20bem%3F" />
+                    <IconItem
+                        className="fab fa-linkedin"
+                        href="https://www.linkedin.com/in/matheus-silva-freitas-83134176/"
+                    />
+                    <IconItem
+                        className="fab fa-gitlab"
+                        href="https://gitlab.com/FormigTeen"
+                    />
+                    <IconItem
+                        className="fab fa-github"
+                        href="https://github.com/FormigTeen"
+                    />
+                    <IconItem
+                        className="fas fa-envelope"
+                        href="mailto:contato@formigteen.dev"
+                    />
+                </IconsList>
+            </InfoBox>
+            <ImageBox source={ProfileImage} />
+        </Container>
+    )
+}
 
 export default Profile

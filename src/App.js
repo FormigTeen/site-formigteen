@@ -6,6 +6,9 @@ import Quote from './pages/Quote'
 import Bot from './pages/Bot'
 import Skills from './pages/Skills'
 import './index.css';
+import Flag from "./pages/Flag";
+import {LanguageContextProvider} from "./contexts/LanguageContext";
+import {startLanguage} from "./plugins/i18n";
 
 const myTheme = {
     ...theme,
@@ -21,13 +24,18 @@ const myTheme = {
     },
 }
 
+startLanguage()
+
 function App() {
   return (
       <ThemeProvider theme={myTheme}>
-          <Profile />
-          <Quote />
-          <Bot />
-          <Skills />
+          <LanguageContextProvider>
+              <Flag />
+              <Profile />
+              <Quote />
+              <Bot />
+              <Skills />
+          </LanguageContextProvider>
       </ThemeProvider>
   );
 }

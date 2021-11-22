@@ -1,83 +1,87 @@
 import React from 'react';
-import { 
+import {
     Heading,
     Flex,
     Text,
     Box
 } from 'rebass/styled-components'
+import {useTranslation} from "react-i18next";
 
-const Skills = () => (
-    <Flex
-        bg='primary'
-        flexDirection='column'
-        px={[2, 3, 3, 5]}
-        pb={[5, 5, 5, 6]}
-        sx={{
-            justifyContent: 'center',
-            alignItems: 'center',
-        }}
-    >
-        <Box 
-            mb={[3, 3, 3, 4]}
-            flex={0}>
-            <Heading 
-                as='h2' 
-                fontSize={[4, 4, 4, 4]}
-                sx={{
-                    textAlign: 'center',
-                }}
-                color='secondary'>
-                SKILLS
-            </Heading>
-        </Box>
-        <Box flex={1}>
-            <Flex
-                sx={{
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    flexWrap: 'wrap'
-                }}
-            >
-                <Skill value={100}>
-                    php
-                </Skill>
-                <Skill value={100}>
-                    MySQL
-                </Skill>
-                <Skill value={100}>
-                    JavaScript
-                </Skill>
-                <Skill value={100}>
-                    Docker
-                </Skill>
-                <Skill value={100}>
-                    TypeScript
-                </Skill>
-                <Skill value={100}>
-                    Laravel
-                </Skill>
-                <Skill value={100}>
-                    Lumen
-                </Skill>
-                <Skill value={100}>
-                    Jigsaw
-                </Skill>
-                <Skill value={100}>
-                    React
-                </Skill>
-                <Skill value={100}>
-                    VueJs
-                </Skill>
-                <Skill value={100}>
-                    AdonisJs
-                </Skill>
-            </Flex>
-        </Box>
-    </Flex>
-)
+const Skills = () => {
+    const { t } = useTranslation()
+    return (
+        <Flex
+            bg='primary'
+            flexDirection='column'
+            px={[2, 3, 3, 5]}
+            pb={[5, 5, 5, 6]}
+            sx={{
+                justifyContent: 'center',
+                alignItems: 'center',
+            }}
+        >
+            <Box
+                mb={[3, 3, 3, 4]}
+                flex={0}>
+                <Heading
+                    as='h2'
+                    fontSize={[4, 4, 4, 4]}
+                    sx={{
+                        textAlign: 'center',
+                    }}
+                    color='secondary'>
+                    { t('HABILIDADES') }
+                </Heading>
+            </Box>
+            <Box flex={1}>
+                <Flex
+                    sx={{
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        flexWrap: 'wrap'
+                    }}
+                >
+                    <Skill value={100}>
+                        php
+                    </Skill>
+                    <Skill value={100}>
+                        MySQL
+                    </Skill>
+                    <Skill value={100}>
+                        JavaScript
+                    </Skill>
+                    <Skill value={100}>
+                        Docker
+                    </Skill>
+                    <Skill value={100}>
+                        TypeScript
+                    </Skill>
+                    <Skill value={100}>
+                        Laravel
+                    </Skill>
+                    <Skill value={100}>
+                        Lumen
+                    </Skill>
+                    <Skill value={100}>
+                        Jigsaw
+                    </Skill>
+                    <Skill value={100}>
+                        React
+                    </Skill>
+                    <Skill value={100}>
+                        VueJs
+                    </Skill>
+                    <Skill value={100}>
+                        AdonisJs
+                    </Skill>
+                </Flex>
+            </Box>
+        </Flex>
+    )
+}
 
 const Skill = ({ value, children }) => (
-    <Box 
+    <Box
         m={3}
         p={1}
         sx={{
@@ -86,7 +90,7 @@ const Skill = ({ value, children }) => (
             width: '150px',
         }}
     >
-        <Box 
+        <Box
             sx={{
                 display: 'flex',
                 height: '100%',
@@ -95,7 +99,7 @@ const Skill = ({ value, children }) => (
                 justifyContent: 'center',
                 alignItems: 'center',
                 borderColor: 'secondary',
-                border: '15px solid', 
+                border: '15px solid',
                 background: `linear-gradient(20deg, #E7E4EF ${value}%, #010101 ${value}%)`,
             }}
         >
