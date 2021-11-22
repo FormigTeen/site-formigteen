@@ -12,7 +12,7 @@ export const LanguageContextProvider = ({ children }) => {
 
     useEffect(() => {
         changeLanguage(language)
-    }, [language])
+    }, [language, changeLanguage])
 
     return (
         <LanguageContext.Provider value={{language, setLanguage}}>

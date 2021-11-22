@@ -8,7 +8,7 @@ import {
 import {useTranslation} from "react-i18next";
 
 const Quote = () => {
-    const { t, i18n } = useTranslation()
+    const { t } = useTranslation()
     return (
         <Flex
             bg='primary'
