@@ -106,7 +106,7 @@ const InfoBox = ({ children }) => (
         px={0}
         flex={3}
         sx={{
-            minWidth: '450px'
+            minWidth: '350px'
         }}
     >
         <Flex
